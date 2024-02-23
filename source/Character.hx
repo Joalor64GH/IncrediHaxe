@@ -1,9 +1,5 @@
 package;
 
-import haxe.Json;
-import flixel.FlxG;
-import flixel.FlxSprite;
-
 typedef CharJson = {
     var animeName:String;
     var percentageMax:Float;
@@ -23,8 +19,8 @@ typedef AnimArray = {
 
 class Character extends FlxSprite
 {
-    public function new()
+    public function new(x:Float = 0, y:Float = 0)
     {
-        super();
+        super(x, y);
     }
 }

@@ -1,7 +1,5 @@
 package;
 
-import openfl.utils.Assets;
-import flixel.FlxG;
 import flixel.graphics.frames.FlxAtlasFrames;
 
 class Paths

@@ -1,10 +1,6 @@
 package;
 
-import haxe.Json;
-import flixel.FlxG;
-import flixel.util.FlxColor;
-
-typedef VersionData = {
+typedef VersionJson = {
     var name:String;
     var version:Int;
     var date:Int;
@@ -34,7 +30,7 @@ typedef VersionData = {
 typedef AnimeArray = {
     var name:String;
     var color:FlxColor;
-    var uniqSnd:Bool;
+    var uniqsnd:Bool;
 }
 
 typedef BonusArray = {
@@ -47,8 +43,14 @@ typedef BonusArray = {
 
 class VersionData
 {
-    public function new()
+    var curVersion:VersionJson;
+
+    public function getVersion(ver:Int)
     {
-        super();
+        try {
+            curVersion = Json.parse(Paths.file('asset-v' + ver + '/app.json'));
+        } catch(e) {
+            trace('$e');
+        }
     }
 }
