@@ -6,7 +6,7 @@ import flixel.graphics.frames.FlxAtlasFrames;
 
 class Paths
 {
-	final SOUND_EXT = #if !html5 "ogg" #else "mp3" #end;
+	inline public static final SOUND_EXT = #if !html5 "ogg" #else "mp3" #end;
 
 	public static function file(file:String)
 		return 'assets/$file';
