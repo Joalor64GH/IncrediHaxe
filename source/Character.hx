@@ -7,10 +7,10 @@ typedef CharJson = {
     var width:Int;
     var height:Int;
     var headHeight:Int;
-    var arrayFrame:Array<AnimArray>;
+    var arrayFrame:Array<Prop>;
 }
 
-typedef AnimArray = {
+typedef Prop = {
     var xPos:Float;
     var yPos:Float;
     var xMovement:Float;
