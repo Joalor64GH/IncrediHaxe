@@ -2,11 +2,15 @@ package states;
 
 class PlayState extends FlxState
 {
+    public static var instance:PlayState = null;
+
     var hudCam:FlxCamera;
 
     override public function create()
     {
         super.create();
+
+        instance = this;
 
         var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.WHITE);
         add(bg);
