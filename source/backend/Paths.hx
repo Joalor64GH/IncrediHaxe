@@ -24,9 +24,11 @@ enum SpriteSheetType {
 @:access(openfl.display.BitmapData)
 class Paths {
 	inline public static final DEFAULT_FOLDER:String = 'assets';
+	
 	public static final getText:String->String = #if sys File.getContent #else Assets.getText #end;
 
 	public static var SOUND_EXT:Array<String> = ['.ogg', '.wav'];
+	public static var HSCRIPT_EXT:Array<String> = ['.hx', '.hxs', '.hxc', '.hscript'];
 
 	public static var currentTrackedAssets:Map<String, FlxGraphic> = [];
 	public static var currentTrackedSounds:Map<String, Sound> = [];
@@ -146,6 +148,18 @@ class Paths {
 
 	inline static public function xml(key:String)
 		return file('$key.xml');
+	
+	inline static public function script(key:String) {
+		var extension:String = '.hxs';
+
+		for (ext in HSCRIPT_EXT)
+			extension = (exists(file(key + ext))) ? ext : extension;
+
+		return file(key + extension);
+	}
+
+	static public function validScriptType(n:String):Bool
+		return n.endsWith('.hx') || n.endsWith('.hxs') || n.endsWith('.hxc') || n.endsWith('.hscript');
 
 	static public function sound(key:String, ?cache:Bool = true):Sound
 		return returnSound('sounds/$key', cache);
