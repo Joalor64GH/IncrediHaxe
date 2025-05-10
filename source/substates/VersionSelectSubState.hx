@@ -1,4 +1,4 @@
-package;
+package substates;
 
 class VersionSelectSubstate extends FlxSubState
 {
