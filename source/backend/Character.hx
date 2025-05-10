@@ -11,10 +11,7 @@ typedef CharJson = {
 }
 
 typedef Prop = {
-    var xPos:Float;
-    var yPos:Float;
-    var xMovement:Float;
-    var yMovement:Float;
+    var prop:String;
 }
 
 class Character extends FlxSprite
